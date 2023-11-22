@@ -41,8 +41,15 @@ To do so, simply run (requires [Nix](https://nixos.org/download.html))
 git clone https://github.com/siduck/st.git
 cd st
 (change the compiler if you cant use c99 to compile: sed -i 's/^#\ CC\ =\ c99/CC=gcc/' config.mk)
-sudo make install
-xrdb merge pathToXresourcesFile
+sudo make clean install && make clean
+```
+Font and theme settings are stored in .Xresources file
+To search correct font name use:
+`fc-list | awk -F ":" '{ print $2 } | uniq`
+
+Then make changes to .Xresources file if necessary and:
+```
+xrdb merge pathToXresourcesFile && kill -USR1 $(pidof st)
 ```
 
 (note : put the xrdb merge command in your wm's autostart or similar)
