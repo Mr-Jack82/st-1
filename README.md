@@ -115,9 +115,6 @@ alt  + s                Increase Transparency<br>
 alt  + a                Decrease Transparency<br>
 alt  + m                Reset Transparency<br>
 
-alt + k                 scroll down
-alt + j                 scroll up
-
 mod + shift + enter    open a new terminal with same cwd ( current working directory )
 </pre>
 
